@@ -36,9 +36,9 @@ const Login = () => {
             <Snackbar open={open} autoHideDuration={6000} onClose={handleToast} anchorOrigin={{ vertical: 'top', horizontal: 'right' }}>
                 <Alert onClose={handleToast} severity='success'>Updated the login details</Alert>
             </Snackbar>
-            <div className='card-container'>
-                <div className='card'>
-                    <img src='/logo192.png' alt='Logo' className='logo'></img>
+            <div className='main-page-card'>
+                <div className='contents'>
+                    <img className='logo' src='/logo192.png'></img>
                     <h3>{headerText}</h3>
                     {registerForm ? <RegisterForm goToLogin={goToLogin} /> :
                         <>

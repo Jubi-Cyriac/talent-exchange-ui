@@ -1,49 +1,18 @@
 body{
-    background-image: url('/public/bg-login.png');
-    background-size: cover
+    background-image: url('../../../public/login-form-bg.png');
 }
-.card-container {
+
+img.logo{
+    height: 20vh;
+}
+.main-page-card{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0;
+    height: 100vh;
 }
-
-.card {
-    border-radius: 0px;
-    box-shadow: 0 5px 20px rgba(1, 1, 1, 0.2);
-    padding: 20px;
+.contents{
     text-align: center;
-    width: 30%;
-    margin-top: 3vh;
-    background-image: url('/public/login-form-bg.png');
-  }
-  @media (max-width: 1024px) {
-    .card-container {
-        position: absolute;
-        width: 100%;
-        height: 100vh;
-        overflow-y: auto;
-        max-height: 100vh;
-    }
-    .card{
-        width: 100%;
-        height: 100vh;
-        padding-top: 50%;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .card-container {
-        width: 100%;
-        height: 100vh;
-        overflow-y: hidden;
-    }
-    .card{
-        position: fixed;
-        width: 100%;
-        padding-bottom: 50vh;
-    }
 }
 .login-form{
     margin-top: 1.5rem
@@ -71,9 +40,6 @@ body{
     text-transform: none;
 }
 
-.logo {
-    height: 15vh;
-}
 button.login-text{
     margin-right: -8px;
 }
