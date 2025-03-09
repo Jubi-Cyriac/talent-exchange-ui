@@ -43,7 +43,7 @@ const Login = () => {
                     {registerForm ? <RegisterForm goToLogin={goToLogin} /> :
                         <>
                             <div className='login-form'>
-                                <TextField id="userName" label="User Name" variant="outlined" value={loginInput.userName} onChange={handleInput} />
+                                <TextField id="userName" label="User Name" variant="outlined" value={loginInput.userName} onChange={handleInput} autoComplete='off' />
                             </div>
                             <div className='login-form'>
                                 <TextField id="password" label="Password" variant="outlined" type='password' value={loginInput.password}

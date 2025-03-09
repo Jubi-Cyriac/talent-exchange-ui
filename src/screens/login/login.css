@@ -43,3 +43,21 @@ img.logo{
 button.login-text{
     margin-right: -8px;
 }
+
+@media (max-width: 1024px) {
+    .main-page-card{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .contents{
+        text-align: center;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .contents{
+        text-align: center;
+    }
+}
