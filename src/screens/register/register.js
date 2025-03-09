@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import '../register/register.css'
-import { Alert, Button, IconButton, Snackbar, TextField } from '@mui/material';
+import { Button, TextField } from '@mui/material';
 
 const RegisterForm = ({ goToLogin }) => {
     const [registerParams, setRegisterParams] = useState({
