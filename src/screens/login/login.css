@@ -1,38 +1,18 @@
 body{
-    background-image: url('/public/bg-login.png');
-    background-size: cover
+    background-image: url('../../../public/login-form-bg.png');
 }
-.card-container {
+
+img.logo{
+    height: 20vh;
+}
+.main-page-card{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0;
+    height: 100vh;
 }
-
-.card {
-    border-radius: 0px;
-    box-shadow: 0 5px 20px rgba(1, 1, 1, 0.2);
-    padding: 20px;
+.contents{
     text-align: center;
-    width: 30%;
-    margin-top: 20vh;
-    min-height: 50vh;
-    background-image: url('/public/login-form-bg.png');
-  }
-  @media (max-width: 768px) {
-    .card {
-      width: 50%;
-      margin-top: 10vh;
-      min-height: 45vh;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .card {
-      width: 80%;
-      margin-top: 15vh;
-      min-height: 45vh;
-    }
 }
 .login-form{
     margin-top: 1.5rem
@@ -56,7 +36,28 @@ body{
     cursor: pointer;
 }
 .login-form button {
-    border-radius: 20px;
+    border-radius: 5px;
     text-transform: none;
-    margin-right: 10px;
+}
+
+button.login-text{
+    margin-right: -8px;
+}
+
+@media (max-width: 1024px) {
+    .main-page-card{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .contents{
+        text-align: center;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .contents{
+        text-align: center;
+    }
 }
