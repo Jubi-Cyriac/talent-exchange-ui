@@ -1,73 +1,56 @@
-import { Alert, Button, Snackbar, TextField } from '@mui/material';
-import '../login/login.css'
-import { useState } from 'react';
-import RegisterForm from '../register/register';
+import React from 'react';
+import { Button, Checkbox, Form, Input } from 'antd';
+import './login.css'
 
 const Login = () => {
-    const [open, setOpen] = useState(false);
-    const [registerForm, setRegisterForm] = useState(false);
-    const [headerText, setHeaderText] = useState(`Talent Exchange Portal- Login`)
-    const [loginInput, setLoginInput] = useState({
-        userName: '', password: ''
-    })
-    const handleInput = (event) => {
-        const { id, value } = event.target;
-        setLoginInput((prevFormData) => ({
-            ...prevFormData,
-            [id]: value
-        }))
-    }
-    const getValues = () => {
-        setOpen(true);
-    }
-    const registerUser = () => {
-        setRegisterForm(true);
-        setHeaderText("Talent Exchange Portal- Register")
-    }
-    const goToLogin = () => {
-        setRegisterForm(false)
-        setHeaderText("Talent Exchange Portal- Login")
-    }
-    const handleToast = () => {
-        setOpen(false);
-    }
+    const onFinish = values => {
+
+    };
+    const onFinishFailed = errorInfo => {
+        console.log('Failed:', errorInfo);
+    };
     return (
         <>
-            <Snackbar open={open} autoHideDuration={6000} onClose={handleToast} anchorOrigin={{ vertical: 'top', horizontal: 'right' }}>
-                <Alert onClose={handleToast} severity='success'>Updated the login details</Alert>
-            </Snackbar>
-            <div className='main-page-card'>
-                <div className='contents'>
-                    <img className='logo' src='/logo192.png'></img>
-                    <h3>{headerText}</h3>
-                    {registerForm ? <RegisterForm goToLogin={goToLogin} /> :
-                        <>
-                            <div className='login-form'>
-                                <TextField id="userName" label="User Name" variant="outlined" value={loginInput.userName} onChange={handleInput} autoComplete='off' />
-                            </div>
-                            <div className='login-form'>
-                                <TextField id="password" label="Password" variant="outlined" type='password' value={loginInput.password}
-                                    onChange={handleInput} />
-                                <div className='forgot-password'>
-                                    <span>Forgot Password</span>
-                                </div>
-                            </div>
-                            <div className='login-form'>
-                                <Button className='login-text' variant='text' color='secondary' onClick={getValues}>Login</Button> <b>|</b>
-                                <Button variant='text' color='secondary' onClick={registerUser}>Register</Button>
-                            </div>
-                            <div className='other'>
-                                <span><b>OR</b></span>
-                            </div>
-                            <div className='login-methods'>
-                                <Button variant='contained' color='info'>Login via Google</Button>
-                                <Button variant='contained' color='info'>Login via OTP</Button>
-                            </div>
-                        </>}
-                </div>
+            <div className='container'>
+                <Form
+                    name="basic"
+                    labelCol={{ span: 8 }}
+                    wrapperCol={{ span: 16 }}
+                    style={{ maxWidth: 600 }}
+                    initialValues={{ remember: true }}
+                    onFinish={onFinish}
+                    onFinishFailed={onFinishFailed}
+                    autoComplete="off"
+                >
+                    <Form.Item
+                        label="Username"
+                        name="username"
+                        rules={[{ required: true, message: 'Please input your username!' }]}
+                    >
+                        <Input />
+                    </Form.Item>
+
+                    <Form.Item
+                        label="Password"
+                        name="password"
+                        rules={[{ required: true, message: 'Please input your password!' }]}
+                    >
+                        <Input.Password />
+                    </Form.Item>
+
+                    <Form.Item name="remember" valuePropName="checked" label={null}>
+                        <Checkbox>Remember me</Checkbox>
+                    </Form.Item>
+
+                    <Form.Item label={null}>
+                        <Button type="primary" htmlType="submit">
+                            Submit
+                        </Button>
+                    </Form.Item>
+                </Form>
             </div>
         </>
     )
 }
 
-export default Login;
+export default Login

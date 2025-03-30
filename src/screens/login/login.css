@@ -1,63 +1,6 @@
-body{
-    background-image: url('../../../public/login-form-bg.png');
-}
-
-img.logo{
-    height: 20vh;
-}
-.main-page-card{
+.container{
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     height: 100vh;
-}
-.contents{
-    text-align: center;
-}
-.login-form{
-    margin-top: 1.5rem
-}
-.other{
-    margin-top: 1rem;
-}
-
-.login-methods button{
-    margin-right: 10px;
-    margin-top: 2rem;
-    text-transform: none;
-    border-radius: 20px;
-}
-.forgot-password{
-    margin-left: 6.5rem;
-    margin-top: 1rem;
-}
-.forgot-password:hover{
-    color: red;
-    cursor: pointer;
-}
-.login-form button {
-    border-radius: 5px;
-    text-transform: none;
-}
-
-button.login-text{
-    margin-right: -8px;
-}
-
-@media (max-width: 1024px) {
-    .main-page-card{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-    }
-    .contents{
-        text-align: center;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .contents{
-        text-align: center;
-    }
 }
