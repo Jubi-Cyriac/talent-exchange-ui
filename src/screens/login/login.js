@@ -12,6 +12,10 @@ const Login = () => {
     return (
         <>
             <div className='container'>
+            <div className='main-logo'>
+                <img src='/logo192.png'></img>
+                <h6>Talent Exchange Portal - Login</h6>
+            </div>
                 <Form
                     name="basic"
                     labelCol={{ span: 8 }}
@@ -37,11 +41,6 @@ const Login = () => {
                     >
                         <Input.Password />
                     </Form.Item>
-
-                    <Form.Item name="remember" valuePropName="checked" label={null}>
-                        <Checkbox>Remember me</Checkbox>
-                    </Form.Item>
-
                     <Form.Item label={null}>
                         <Button type="primary" htmlType="submit">
                             Submit
